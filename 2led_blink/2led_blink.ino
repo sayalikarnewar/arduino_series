@@ -7,36 +7,20 @@ void setup() {
 
 // the loop function runs over and over again forever
 void loop() {
-
-  digitalWrite(9, HIGH);
-  delay(100);
-  digitalWrite(9, LOW);    // turn the LED off by making the voltage LOW
-  delay(100); 
+  blink(9); 
   
-  digitalWrite(11, HIGH);    // turn the LED off by making the voltage LOW
-  delay(100); 
-  digitalWrite(11, LOW);
-  delay(100);
-  digitalWrite(11, HIGH);    // turn the LED off by making the voltage LOW
-  delay(100); 
-  digitalWrite(11, LOW);
-  delay(100);
-
+  for (int i=0; i<2; i++) {
+    blink(11);
+  }
   
-  digitalWrite(13, HIGH);
-  delay(100);
-  digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
-  delay(100); 
-  digitalWrite(13, HIGH);
-  delay(100);
-  digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
-  delay(100); 
-  digitalWrite(13, HIGH);
-  delay(100);
-  digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
-  delay(100); 
+  for (int i=0; i<3; i++) {
+    blink(13); 
+  }
+}
 
-
- 
-
+void blink(int p) {         // function to blink a led "p" with delay of 100ms
+  digitalWrite(p, HIGH);    // turn the LED on by making the voltage HIGH
+  delay(100);
+  digitalWrite(p, LOW);     // turn the LED off by making the voltage LOW
+  delay(100);
 }
